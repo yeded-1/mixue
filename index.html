@@ -8,9 +8,8 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #fce4ec, #e1bee7);
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -18,34 +17,51 @@
     }
 
     .container {
-      max-width: 800px;
-      background-color: rgba(255, 255, 255, 0.9);
+      margin-top: 50px;
+      width: 90%;
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.9);
       padding: 30px;
-      margin: 50px 20px;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     h1 {
       font-size: 2.5rem;
-      color: #7b1fa2;
+      color: #6a1b9a;
+      margin-bottom: 1rem;
     }
 
-    p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      margin: 1.5rem 0;
-    }
-
-    .img-section {
-      margin: 20px 0;
-    }
-
-    .img-section img {
+    .reveal-btn {
+      display: block;
       width: 100%;
-      max-width: 400px;
+      padding: 12px 20px;
+      margin: 10px 0;
+      font-size: 1rem;
+      color: white;
+      background: #8e24aa;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .reveal-btn:hover {
+      background: #6a1b9a;
+    }
+
+    .message {
+      display: none;
+      margin: 20px 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .message img {
+      max-width: 100%;
       border-radius: 15px;
+      margin-top: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
@@ -54,9 +70,9 @@
     }
 
     .footer {
-      margin-top: 2rem;
+      margin-top: 30px;
       font-size: 0.9rem;
-      color: #555;
+      color: #666;
     }
   </style>
 </head>
@@ -69,35 +85,46 @@
   </audio>
 
   <div class="container">
-    <h1>You’re My Universe</h1>
+    <h1>You're the Only One</h1>
 
-    <p>Every single day, it’s still you. Even when I try to move on, I find myself circling back—because no one else could ever be *you*.</p>
-    <div class="img-section">
-      <img src="https://via.placeholder.com/400x250.png?text=Memory+1" alt="Memory of us">
+    <button class="reveal-btn" onclick="reveal(0)">Reveal Memory 1</button>
+    <div class="message">
+      <p>It’s always been you. Even when the world felt loud, your presence brought peace to my storm.</p>
+      <img src="https://via.placeholder.com/400x250.png?text=Memory+1" alt="Memory 1"/>
     </div>
 
-    <p>You’re the only one I see in my future. No matter how cloudy the path gets, I’ll walk through it if it means reaching you.</p>
-    <div class="img-section">
-      <img src="https://via.placeholder.com/400x250.png?text=Memory+2" alt="Looking Ahead">
+    <button class="reveal-btn" onclick="reveal(1)">Reveal Memory 2</button>
+    <div class="message">
+      <p>I see forever in your eyes. I don’t want anyone else—just you, in every lifetime.</p>
+      <img src="https://via.placeholder.com/400x250.png?text=Memory+2" alt="Memory 2"/>
     </div>
 
-    <p>I’m willing to risk it all—my pride, my comfort, even my heart—just to show you this love was never a phase. It’s my truth.</p>
-    <div class="img-section">
-      <img src="https://via.placeholder.com/400x250.png?text=Risking+It+All" alt="Risking It All">
+    <button class="reveal-btn" onclick="reveal(2)">Reveal Memory 3</button>
+    <div class="message">
+      <p>I’m willing to risk it all—not because I’m reckless, but because *you’re worth it*.</p>
+      <img src="https://via.placeholder.com/400x250.png?text=Memory+3" alt="Memory 3"/>
     </div>
 
-    <p>You are my universe. And I want to spend this lifetime proving it—if you'll let me.</p>
-    <div class="img-section">
-      <img src="https://via.placeholder.com/400x250.png?text=You+Are+My+Universe" alt="Universe">
+    <button class="reveal-btn" onclick="reveal(3)">Reveal Final Message</button>
+    <div class="message">
+      <p>You are my universe. And if you'd let me—I’ll spend my life proving that to you.</p>
+      <img src="https://via.placeholder.com/400x250.png?text=You+Are+My+Universe" alt="My Universe"/>
     </div>
 
     <div class="footer">
-      With all my heart,<br>
-      <strong>[Your Name]</strong>
+      With all my heart,<br><strong>[Your Name]</strong>
     </div>
   </div>
+
+  <script>
+    function reveal(index) {
+      const messages = document.querySelectorAll('.message');
+      messages[index].style.display = 'block';
+    }
+  </script>
 </body>
 </html>
+
 
 
 
